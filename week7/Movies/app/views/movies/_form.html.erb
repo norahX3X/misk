@@ -1,0 +1,13 @@
+<%= form_for @movie  do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+<%= f.label :actor_id %>
+<%= f.collection_select :actor_id, Actor.all, :id, :name %>
+
+<%= f.label :director_id %>
+<%= f.collection_select :director_id, Director.all, :id, :name %>
+
+
+  <%= f.submit "Create" %>
+<% end %>
